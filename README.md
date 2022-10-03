@@ -1,10 +1,10 @@
+# Cyber Kongz Admin UI Demo
+
 # dApp Starter Boilerplate
 
 A dApp starter kit template to quick start a dapp project with Next.js + Tailwind CSS + Ethers + wagmi + RainbowKit.
 
 Other tools/components included: Headless UI, Heroicons, Autoprefixer, Sass, PostCSS, ESLint, Prettier.
-
-Live preview for this repo: https://dapp-starter.aris.ac
 
 ## Getting Started
 

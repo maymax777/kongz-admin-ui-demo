@@ -1,0 +1,7 @@
+export { default as CartArrowUp } from './icons/CartArrowUp'
+export { default as ChartLineUp } from './icons/ChartUp'
+export { default as Note } from './icons/Note'
+export { default as UserGroup } from './icons/UserGroup'
+export { default as ArrowDownLeft } from './icons/ArrowDownLeft'
+export { default as ArrowUpRight } from './icons/ArrowUpRight'
+export { default as SearchIcon } from './icons/SearchIcon'
