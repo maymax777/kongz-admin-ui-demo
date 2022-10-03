@@ -1,6 +1,13 @@
 import { ArrowDownLeft, ArrowUpRight } from 'assets'
 
-const Card = ({ label, value, percent, Icon }) => {
+export interface ICardProps {
+  label: string
+  value: string
+  percent: string
+  Icon: React.FC
+}
+
+const Card = ({ label, value, percent, Icon }: ICardProps) => {
   const lose = percent[0] === '-'
   const color = lose ? 'text-red-50' : 'text-green-50'
 

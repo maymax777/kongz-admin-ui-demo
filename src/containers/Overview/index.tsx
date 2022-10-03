@@ -2,11 +2,16 @@ import { useAccount } from 'wagmi'
 import { Pulse } from 'components'
 import useKongData from 'hooks/use-kong-data'
 import { Body, Header, Helper } from './subcomponens'
+import { ISale } from 'types'
 
-const Overview = ({ id = 0 }) => {
+export interface IOverviewProps {
+  id?: number
+}
+
+const Overview = ({ id = 0 }: IOverviewProps) => {
   const { isConnected } = useAccount()
   const { data } = useKongData(id)
-  const sales = data ? data.sales : []
+  const sales: ISale[] = data ? data.sales : []
 
   return (
     <div className="h-screen w-full rounded-3xl bg-white">

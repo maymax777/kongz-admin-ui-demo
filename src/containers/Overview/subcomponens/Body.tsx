@@ -1,10 +1,16 @@
 import { DataTable, Pulse } from 'components'
 import { Analytics } from 'containers'
 import useKongImage from 'hooks/use-kong-image'
+import { ISale } from 'types'
 import { column, row, rowCheck } from './utils'
 
-const Body = ({ sales, id }) => {
-  const images = useKongImage(id, sales)
+export interface IBodyProps {
+  sales: ISale[]
+  id: number
+}
+
+const Body = ({ sales, id }: IBodyProps) => {
+  const images: string[] = useKongImage(id, sales)
 
   const [columns, rows] = [column(), row(sales, images)]
   return (

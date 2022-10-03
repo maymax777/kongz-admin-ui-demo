@@ -1,7 +1,13 @@
-import Table from 'react-tailwind-table'
+import Table, { Icolumn, Irow, renderFunction } from 'react-tailwind-table'
 import 'react-tailwind-table/dist/index.css'
 
-const DataTable = ({ columns, rows, rowCheck }) => {
+export interface IDataTableProps {
+  columns: Icolumn[]
+  rows: Irow[]
+  rowCheck: renderFunction
+}
+
+const DataTable = ({ columns, rows, rowCheck }: IDataTableProps) => {
   return (
     <div className="drop-shadow-2x p-2">
       {rows && (

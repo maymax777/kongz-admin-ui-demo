@@ -1,4 +1,5 @@
 import truncateEthAddress from 'truncate-eth-address'
+import { ISale } from 'types'
 import { CYBER_KONGZ } from 'utils/contract-addresses'
 import A from './A'
 
@@ -19,23 +20,21 @@ export const column = () => {
   ]
 }
 
-export const row = (items, images) => {
+export const row = (items: ISale[], images: string[]) => {
   return (
     items &&
-    items
-      .map((item, index) => ({
-        image: images[index],
-        block: Number(item.block),
-        orderSource: item.orderSource,
-        from: item.from,
-        to: item.to,
-        txHash: item.txHash,
-        tokenId: item.token.tokenId,
-        timestamp: new Date(item.timestamp * 1000).toLocaleDateString('en-US').toString(),
-        priceETH: Number(item.price.amount.native).toFixed(3),
-        priceUSD: '$' + Number(item.price.amount.usd).toFixed(3),
-      }))
-      .sort((a, b) => a.id - b.id)
+    items.map((item, index) => ({
+      image: images[index],
+      block: Number(item.block),
+      orderSource: item.orderSource,
+      from: item.from,
+      to: item.to,
+      txHash: item.txHash,
+      tokenId: item.token.tokenId,
+      timestamp: new Date(item.timestamp * 1000).toLocaleDateString('en-US').toString(),
+      priceETH: Number(item.price.amount.native).toFixed(3),
+      priceUSD: '$' + Number(item.price.amount.usd).toFixed(3),
+    }))
   )
 }
 
